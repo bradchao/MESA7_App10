@@ -12,6 +12,7 @@
 		2926025C1F020917006A16CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2926025A1F020917006A16CC /* Main.storyboard */; };
 		2926025E1F020917006A16CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2926025D1F020917006A16CC /* Assets.xcassets */; };
 		292602611F020917006A16CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2926025F1F020917006A16CC /* LaunchScreen.storyboard */; };
+		2926026A1F022940006A16CC /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 292602691F02293F006A16CC /* user.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2926025D1F020917006A16CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		292602601F020917006A16CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		292602621F020917006A16CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		292602691F02293F006A16CC /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		292602551F020916006A16CC /* MyApp10 */ = {
 			isa = PBXGroup;
 			children = (
+				292602681F0228EA006A16CC /* imgs */,
 				292602561F020917006A16CC /* AppDelegate.swift */,
 				292602581F020917006A16CC /* ViewController.swift */,
 				2926025A1F020917006A16CC /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				292602621F020917006A16CC /* Info.plist */,
 			);
 			path = MyApp10;
+			sourceTree = "<group>";
+		};
+		292602681F0228EA006A16CC /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				292602691F02293F006A16CC /* user.png */,
+			);
+			name = imgs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +137,7 @@
 			files = (
 				292602611F020917006A16CC /* LaunchScreen.storyboard in Resources */,
 				2926025E1F020917006A16CC /* Assets.xcassets in Resources */,
+				2926026A1F022940006A16CC /* user.png in Resources */,
 				2926025C1F020917006A16CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
