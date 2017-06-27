@@ -18,14 +18,64 @@ class ViewController: UIViewController {
             self.fetchImage()
         }
     }
+    @IBOutlet weak var textAccount: UITextField!
+    
+    @IBOutlet weak var textPasswd: UITextField!
+    
+    
+    @IBAction func getJSON(_ sender: Any) {
+        do {
+            let url = URL(string: "http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx")
+            let data = try Data(contentsOf: url!)
+            //let source = try String(contentsOf: url!, encoding: String.Encoding.utf8)
+            parseJSON(json: data)
+        }catch {
+            print("OKOKO")
+            // 處理 try 的錯誤
+            print(error)
+        }
+    }
+    
+    private func parseJSON(json: Data){
+        do {
+            if let jsonObj = try? JSONSerialization.jsonObject(with: json, options: .allowFragments) {
+                
+                let allObj = jsonObj as! [[String: AnyObject]]
+                print(allObj.count)
+                
+                for r in allObj {
+                    let name = r["Name"] as! String
+                    let addr = r["Address"] as! String
+                    print("\(name) : \(addr)")
+                }
+            }
+        
+        }catch {
+            print(error)
+        }
+        
+        
+        
+    }
+
+    
+    
     
     @IBAction func testGet(_ sender: Any) {
         do {
-            let url = URL(string: "http://10.2.1.134/brad.php")
+            let account = textAccount.text;
+            let passwd = textPasswd.text;
+            let urlString = "http://10.2.1.134/brad.php?account=\(account!)&passwd=\(passwd!)";
+            //print(urlString)
+            let url = URL(string: urlString)
             let source = try String(contentsOf: url!,
                                     encoding: String.Encoding.ascii)
+            if source == "OK" {
+                print("Add OK")
+            }else {
+                print("Add Fail")
+            }
             
-            print(source)
             
         }catch {
             print("OKOKO")
@@ -62,22 +112,35 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         do {
             let url = URL(string: "https://www.google.com/")
-            let source = try String(contentsOf: url!,
-                                    encoding: String.Encoding.ascii)
-            
+            let ss = try String(contentsOf: url!, encoding: String.Encoding.ascii)
+            //let source = try String(contentsOf: url!,encoding: String.Encoding.ascii)
             //print(source)
-            
         }catch {
             print("OKOKO")
             // 處理 try 的錯誤
             print(error)
         }
-        
-        
     }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        do {
+//            let url = URL(string: "https://www.google.com/")
+//            let source = try String(contentsOf: url!,
+//                                    encoding: String.Encoding.ascii)
+//            
+//            //print(source)
+//            
+//        }catch {
+//            print("OKOKO")
+//            // 處理 try 的錯誤
+//            print(error)
+//        }
+//        
+//        
+//    }
 
 }
 
